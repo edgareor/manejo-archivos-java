@@ -1,23 +1,32 @@
 package escribir;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import org.apache.poi.xwpf.extractor.XWPFWordExtractor;
+import org.apache.poi.xwpf.usermodel.XWPFDocument;
+
 public class EscribirArchivos {
 	
-    public static void escribirArchivo(String nombreArchivo) {  // mismo proceso de creacion  de archivo pero usando el objeto PrintWriter para escribir en el archivo.
+    public static void escribirArchivo(String ruta, String nombreArchivo) {  // mismo proceso de creacion  de archivo pero usando el objeto PrintWriter para escribir en el archivo.
 
-        File archivo = new File(nombreArchivo);
+        File archivo = new File(ruta+nombreArchivo);
 
         try {
+        	
+            FileInputStream entrada = new FileInputStream(archivo);
+            
+            XWPFDocument ardocx = new XWPFDocument(entrada); 
+            @SuppressWarnings("resource")
+			XWPFWordExtractor xwpf_we = new XWPFWordExtractor(ardocx); 
+            
+            String lectura = xwpf_we.getText();
 
-            PrintWriter salida = new PrintWriter(new FileWriter(archivo));
-            String contenido = "Contenido a escribir en el archivo";
-            salida.println(contenido);
-            salida.println();
-            salida.println("Fin de escritura");
+            PrintWriter salida = new PrintWriter(new FileWriter("G:\\Mi unidad\\Users\\eojedar\\Respaldo Wiki Txt\\"+nombreArchivo+".txt"));
+            salida.println(lectura);
             salida.close();
             System.out.println("Se ha escrito correctamente al archivo\n");
 
