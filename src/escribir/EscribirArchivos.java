@@ -25,7 +25,8 @@ public class EscribirArchivos {
             
             String lectura = xwpf_we.getText();
 
-            PrintWriter salida = new PrintWriter(new FileWriter("G:\\Mi unidad\\Users\\eojedar\\Respaldo Wiki Txt\\"+nombreArchivo+".txt"));
+            PrintWriter salida = new PrintWriter(new FileWriter(ruta+nombreArchivo+".txt"));
+            lectura.
             salida.println(lectura);
             salida.close();
             System.out.println("Se ha escrito correctamente al archivo\n");

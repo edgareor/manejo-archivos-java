@@ -6,6 +6,8 @@ public class ClaseMain {
 
 	public static void main(String[] args) {
 		
-		ExtraerPorTipo.filtrarFicheros("G:\\Mi unidad\\Users\\eojedar\\Respaldo Wiki Word\\");
+//		ExtraerPorTipo.filtrarFicheros("C:\\Users\\edgar\\Documents\\DocumentosEdgar\\Programación\\Linux - Unix\\");
+		
+		ExtraerPorTipo.filtrarFicheros("C:\\Users\\edgar\\Documents\\DocumentosEdgar\\Programación\\Linux - Unix\\");
 	}
 }

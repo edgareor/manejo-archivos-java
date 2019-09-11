@@ -3,6 +3,7 @@ package extraer;
 import java.io.File;
 
 import escribir.EscribirArchivos;
+import leer.LeerArchivosWord;
 
 public class ExtraerPorTipo {
 	
@@ -10,7 +11,8 @@ public class ExtraerPorTipo {
 		
 		String filename;
 		int num=0;
-		String ruta = "G:\\Mi unidad\\Users\\eojedar\\Respaldo Wiki Word\\";
+//		String rutaHouse = "G:\\Mi unidad\\Users\\eojedar\\Respaldo Wiki Word\\";
+//		String rutaTGR = "C:\\Users\\edgar\\Documents\\DocumentosEdgar\\Programación\\Linux - Unix";
 		
 		File f = new File(path);			// Crear un objeto File que guarde la ruta a introducir.
 		if(f.isDirectory()) {				// Validar si la ruta corresponde a un directorio o un archivo.
@@ -26,10 +28,10 @@ public class ExtraerPorTipo {
 					System.out.println("FILE: "+filename);							// Si el fichero termina con dicho sufijo imprimirlo.
 					
 					// *****   LEER ARCHIVOS WORD   *****
-					// LeerArchivosWord.leerArchivo("G:\\Mi unidad\\Users\\eojedar\\Respaldo Wiki\\"+filename);
+//					LeerArchivosWord.leerArchivo(path+filename);
 					
 					// *****   CREAR ARCHIVOS TXT EN BASE A ARCHIVOS WORD *****
-					EscribirArchivos.escribirArchivo(ruta,filename);
+					EscribirArchivos.escribirArchivo(path,filename);
 				}
 			}
 		}
