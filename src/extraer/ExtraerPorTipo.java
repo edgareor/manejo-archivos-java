@@ -3,6 +3,7 @@ package extraer;
 import java.io.File;
 
 import escribir.EscribirArchivos;
+import leer.LeerArchivos;
 import leer.LeerArchivosWord;
 
 public class ExtraerPorTipo {
@@ -22,16 +23,19 @@ public class ExtraerPorTipo {
 			
 			if (fout.isFile()) {													// Si el fichero es un archivo realizar lo siguiente:
 				filename = fout.getName();											// Extraer el nombre de archivo del fichero.
-				if ((filename.endsWith(".docx")) || (filename.endsWith(".DOCX"))) {	// Validar si el fichero termina con sufijos .txt o .TXT.
+				if ((filename.endsWith(".txt")) || (filename.endsWith(".TXT"))) {	// Validar si el fichero termina con sufijos .txt o .TXT.
 					num++;															// Contabilizar ficheros.
 					System.out.println();
 					System.out.println("FILE: "+filename);							// Si el fichero termina con dicho sufijo imprimirlo.
+					
+					// *****   LEER ARCHIVOS TXT   *****
+					LeerArchivos.leerArchivo(path+filename);
 					
 					// *****   LEER ARCHIVOS WORD   *****
 //					LeerArchivosWord.leerArchivo(path+filename);
 					
 					// *****   CREAR ARCHIVOS TXT EN BASE A ARCHIVOS WORD *****
-					EscribirArchivos.escribirArchivo(path,filename);
+//					EscribirArchivos.escribirArchivo(path,filename);
 				}
 			}
 		}

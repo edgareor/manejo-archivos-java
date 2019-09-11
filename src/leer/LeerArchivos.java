@@ -18,7 +18,7 @@ public class LeerArchivos {
             String lectura = entrada.readLine();
 
             while (lectura != null) {
-                System.out.println(lectura);
+                System.out.println(lectura+"\n");
                 lectura = entrada.readLine();
             }
 

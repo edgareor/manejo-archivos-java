@@ -26,7 +26,6 @@ public class EscribirArchivos {
             String lectura = xwpf_we.getText();
 
             PrintWriter salida = new PrintWriter(new FileWriter(ruta+nombreArchivo+".txt"));
-            lectura.
             salida.println(lectura);
             salida.close();
             System.out.println("Se ha escrito correctamente al archivo\n");
@@ -34,7 +33,5 @@ public class EscribirArchivos {
         } catch (IOException ex) {
             ex.printStackTrace();
         }
-
     }
-
 }
